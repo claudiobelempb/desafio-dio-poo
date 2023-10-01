@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="MavenRunner">
+    <option name="delegateBuildToMaven" value="true" />
+    <option name="environmentProperties">
+      <map>
+        <entry key="SPRING_PROFOLES_ACTIVE" value="production" />
+      </map>
+    </option>
+    <option name="mavenProperties">
+      <map>
+        <entry key="SPRING_PROFOLES_ACTIVE" value="dev" />
+      </map>
+    </option>
+    <option name="vmOptions" value="Application Production" />
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="17" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+</project>
