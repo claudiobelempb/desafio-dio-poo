@@ -1,29 +1,13 @@
 package modules.mentoring.model;
 
+import modules.content.model.Content;
+
 import java.time.LocalDate;
 
-public class Mentoring {
-    private String title;
-    private String description;
+public class Mentoring extends Content {
     private LocalDate createdAt;
 
     public Mentoring() {
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
     }
 
     public LocalDate getCreatedAt() {
@@ -35,11 +19,17 @@ public class Mentoring {
     }
 
     @Override
+    public Double calcXp() {
+        return XP_DEFAULT + 20;
+    }
+
+    @Override
     public String toString() {
-        return "Mentoring{" +
-                "title='" + title + '\'' +
-                ", description='" + description + '\'' +
-                ", createdAt=" + createdAt +
+        return "Course{" +
+                "Title='" + getTitle() + '\'' +
+                ", Description='" + getDescription() + '\'' +
+                ", Created='" + createdAt + '\'' +
+                ", Workload= " + calcXp() +
                 '}';
     }
 }

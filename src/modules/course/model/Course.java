@@ -1,28 +1,10 @@
 package modules.course.model;
 
-public class Course {
-    private String title;
-    private String description;
+import modules.content.model.Content;
+
+public class Course extends Content {
+
     private Integer workload;
-
-    public Course() {
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
 
     public Integer getWorkload() {
         return workload;
@@ -33,11 +15,16 @@ public class Course {
     }
 
     @Override
+    public Double calcXp() {
+        return XP_DEFAULT * workload;
+    }
+
+    @Override
     public String toString() {
         return "Course{" +
-                "title='" + title + '\'' +
-                ", description='" + description + '\'' +
-                ", workload=" + workload +
-                '}';
+                "Title='" + getTitle() + '\'' +
+                ", Description='" + getDescription() + '\'' +
+                ", Workload= " + calcXp() +
+                 '}';
     }
 }
